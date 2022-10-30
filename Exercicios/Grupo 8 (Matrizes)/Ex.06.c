@@ -14,14 +14,14 @@ void LerDados(int m[MAX][MAX]) //Leitura da matriz 4x4
     }
 }
 
-void show(int m[MAX][MAX]) //Impressao da matriz e sua diagonal principal
+void show(int m[MAX][MAX]) //Impressao da matriz e sua diagonal secundaria
 {
     int diagonal[MAX], k = 0;
     for(int i = 0; i<MAX; i++) //troca de linha
     {
         for(int j = 0; j<MAX; j++) //troca de coluna
         {
-            if(i==j)
+            if(i+j+1 == MAX)
             {
                 diagonal[k] = m[i][j];
                 k++;
@@ -31,7 +31,7 @@ void show(int m[MAX][MAX]) //Impressao da matriz e sua diagonal principal
         printf("\n");
     }
 
-    printf("Diagonal principal: ");
+    printf("Diagonal secundaria: ");
 
     for(int i = 0; i<MAX; i++)
     {
