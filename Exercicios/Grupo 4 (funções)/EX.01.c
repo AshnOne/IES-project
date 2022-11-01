@@ -7,7 +7,6 @@
         printf("\nENTRE COM UM NUMERO INTEIRO (EXPOENTE): ");
         scanf("%d",n);
     }
-    
     void CalcularEnesimaPotencia(float x,int n){
         printf("\n-> %.2f^%d = %.2f\n\n",x,n,pow(x,n));
     }
