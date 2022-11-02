@@ -2,7 +2,7 @@
 
 #Esse repositório foi criado como entrega de exercícios para a matéria de introdução a engenharia de software.
 
-#Nossa equipe é composta por 3 integrantes sendo: Matheus Rezende Figueiredo (matheus.figueiredo@unioeste.br), Nicolli Campos Ortleb (), Vinícius Dias ().
+#Nossa equipe é composta por 3 integrantes sendo: Matheus Rezende Figueiredo (matheus.figueiredo@unioeste.br), Nicolli Campos Ortleb (nicolli.ortlieb@unioeste.br), Vinícius de Oliveira Dias (vinicius.dias2@unioeste.br).
 
 #Professor: Willian Francisco
 
