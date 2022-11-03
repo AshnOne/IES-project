@@ -7,3 +7,7 @@
 #Professor: Willian Francisco
 
 #A entrega desses exercícios deve ser feita em iterações ja predefinidas sendo a primeira dos grupos 4(funções) e 8(matrizes) para dia 03/10.
+
+#Os exercícios foram feitos pelo VsCode e Qt Creator em linguagem C.
+
+#Na execução dos programas será impresso no terminal instruções para o funcionamento do próprio.
