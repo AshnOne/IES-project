@@ -7,6 +7,7 @@
 #Professor: Willian Francisco
 
 #A entrega desses exercícios deve ser feita em iterações ja predefinidas da seguinte forma:
+      
       Release 1: 03/11
         Matrizes;
         Funções;
