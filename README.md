@@ -6,7 +6,16 @@
 
 #Professor: Willian Francisco
 
-#A entrega desses exercícios deve ser feita em iterações ja predefinidas sendo a primeira dos grupos 4(funções) e 8(matrizes) para dia 03/10.
+#A entrega desses exercícios deve ser feita em iterações ja predefinidas da seguinte forma:
+      Release 1: 03/11
+        Matrizes;
+        Funções;
+      Release 2: 10/11
+        Parâmetros;
+        Strings;
+      Release 3: 17/11
+        Sequenciais simples;
+        Controle de fluxo;
 
 #Os exercícios foram feitos pelo VsCode e Qt Creator em linguagem C.
 
