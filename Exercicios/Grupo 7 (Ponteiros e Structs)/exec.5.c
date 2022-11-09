@@ -15,8 +15,16 @@ typedef struct
     long int cep;
 } AGENDA;
 
+void imprimir(AGENDA p) // FUNCAO QUE IMPRIME NA TELA OS CADASTROS
+{
+    printf("******USUARIO CADASTRADO******\n");
+    printf("NOME: %s\n", p.nome);
+    printf("ENDERECO: %s\n", p.endereco);
+    printf("FONE: %s\n", p.fone);
+    printf("CEP: %ld\n", p.cep);
+}
 void print_options(int *op) // PRINTA OPCOES E SELECIONA OP ESCOLHIDA
-{ // printa as opcoes da agenda
+{
     printf("Digite o numero da escolha desejada:\n");
     printf("1. Entrar um novo nome na agenda.\n");
     printf("2. Imprimir na tela os dados de uma das pessoas cadastradas.\n");
@@ -24,63 +32,57 @@ void print_options(int *op) // PRINTA OPCOES E SELECIONA OP ESCOLHIDA
     printf("5. Sair\n");
     scanf("%d%*c", op);
 }
-void lerdados(AGENDA *p) //LÊ DADOS DO CADASTRO
-{ // scaneia os dados
+void lerdados(AGENDA *p, int quant) // LÊ DADOS DO CADASTRO
+{
     printf("Digite o nome:\n");
-    scanf("%[^\n]%*c", p->nome);
-    printf("Digite o endereco:\n");
-    scanf("%[^\n]%*c", p->endereco);
-    printf("Digite o telefone:\n");
-    scanf("%[^\n]%*c", p->fone);
-    printf("Digite o CEP:\n");
-    scanf("%d%*c", &p->cep);
+    scanf("%[^\n]%*c", p[quant].nome);
+    printf("\nDigite o endereco:\n");
+    scanf("%[^\n]%*c", p[quant].endereco);
+    printf("\nDigite o telefone:\n");
+    scanf("%[^\n]%*c", p[quant].fone);
+    printf("\nDigite o CEP:\n");
+    scanf("%d%*c", &p[quant].cep);
     system("cls");
 }
-void printar_cadastro(AGENDA *p, int x) //PRINTA O NOME DO USUARIO DIGITADO
+void printar_cadastro(AGENDA *p, int x) // PRINTA O NOME DO USUARIO DIGITADO
 {
     char comp[MAX30];
     int i, j;
 
     if (x == 0)
     {
-        printf("nao ha cadastros a serem mostrados\n"); //CASO NAO TENHA CADASTRO
+        printf("nao ha cadastros a serem mostrados\n"); // CASO NAO TENHA CADASTRO
     }
     else
     {
-        printf("Digite o nome do usuario desejado:\n");
-        scanf("%s%*c", comp); //NOME DO USUARIO CADASTRADO
+        printf("\nDigite o nome do usuario desejado:\n");
+        scanf("%s%*c", comp); // NOME DO USUARIO CADASTRADO
         system("cls");
-        for (i = 0, j = 0; i < x; i++, j++)
+        for (i = 0; i < x; i++)
         {
-            if (strcmp(comp, p[j].nome) == 0) // COMPARA SE STRING EH IGUAL
+            if (strcmp(comp, p[i].nome) == 0) // COMPARA SE STRING EH IGUAL
             {
-                printf("******USUARIO CADASTRADO******\n");
-                printf("NOME: %s\n", p[j].nome);
-                printf("ENDERECO: %s\n", p[j].endereco);
-                printf("FONE: %s\n", p[j].fone);
-                printf("CEP: %d\n", p[j].cep);
+                imprimir(p[i]); // FUNCAO QUE PRINTA OS CADASTROS
             }
+            printf("\n"); // QUEBRA DE LINHA
         }
     }
 }
 
 void Printar_PrimeiraLetra(AGENDA *p, int x) // PRINTA TODOS CADASTRADOS QUE COMECEM COM TAL CARACTER
 {
-    char c[MAX1];
+    char c;
 
-    printf("Digite uma letra inicial dos nomes\n");
-    scanf("%s%*c", c); //CARACTER A SER COMPARADO
+    printf("\nDigite uma letra inicial dos nomes\n");
+    scanf("%c%*c", &c); // DIGITAR O CARACTER A SER COMPARADO
 
     for (int i = 0; i < x; i++)
     {
-        if (strncmp(c, p[i].nome, 1) == 0) //COMPARA O PRIMEIRO CARACTERE DA STRING
+        if (c == p[i].nome[0]) // COMPARA O PRIMEIRO CARACTERE DA STRING
         {
-            printf("******USUARIO CADASTRADO******\n"); //********NAO PRINTA TODOS CADASTROS MAS SO O ULTIMO!!!!!!!!!!!!!!!!!!!!!!!!!!
-            printf("NOME: %s\n", p[i].nome);
-            printf("ENDERECO: %s\n", p[i].endereco);
-            printf("FONE: %s\n", p[i].fone);
-            printf("CEP: %d\n", p[i].cep);
+            imprimir(p[i]); // FUNCAO QUE PRINTA OS CADASTROS
         }
+        printf("\n");
     }
 }
 
@@ -95,10 +97,10 @@ int main()
         system("cls");
 
         switch (op)
-        {
+        { // SWITCH CASE PARA AS OPCOES ESCOLHIDAS PELO USUARIO
         case 1:
-            lerdados(v);
-            x++;
+            lerdados(v, x);
+            x++; // VARIAVEL DE CONTROLE QUE SERA INCREMENTADA A CADA CADASTRO FEITO
             break;
         case 2:
             printar_cadastro(v, x);
@@ -117,37 +119,5 @@ int main()
             system("pause");
         }
     }
-
-    /*   do
-       {
-           print_options(&op);
-           system("cls");
-           if (op == 1)
-           {
-               do
-               {
-                   lerdados(v);
-                   op = 0;
-                   x++;
-               } while (op == 1);
-           }
-           else
-           {
-               if (op == 2)
-               {
-                   printar_cadastro(v, x);
-                   op = 0;
-                   system("pause");
-               }
-               else
-               {
-                   if (op == 3)
-                   {
-                       Printar_PrimeiraLetra(v, x);
-                       op = 0;
-                   }
-               }
-           }
-       } while (op != 5);*/
     return 0;
 }
