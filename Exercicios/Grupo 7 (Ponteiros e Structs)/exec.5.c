@@ -114,9 +114,6 @@ int main()
             break;
         case 5:
             exit;
-        default:
-            printf("valor invalido\n");
-            system("pause");
         }
     }
     return 0;
