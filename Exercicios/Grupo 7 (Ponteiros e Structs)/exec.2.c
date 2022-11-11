@@ -2,7 +2,7 @@
 
 int razao(float *div, float a, float b){
 
-    if (b == 0)
+    if (b == 0) // RETORNA 0 CASO b FOR 0 SENAO REALIZA A DIV
     {
         return 0;
     } else{
@@ -18,8 +18,8 @@ int main(){
     scanf("%f %f", &a, &b);
 
     razao(&div, a, b);
-    if(b == 0){
-        printf("nao e possivel divisao por zero");
+    if(b == 0){ // VERIFICA SE FOI POSSIVEL OU NAO A RAZAO ENTRE a E b
+        printf("nao foi possivel realizar essa operacao\n");
     } else {
         printf("%0.2f/%0.2f = %0.2f\n", a, b, div);
     }
