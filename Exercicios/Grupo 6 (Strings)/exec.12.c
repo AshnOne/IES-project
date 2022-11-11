@@ -1,29 +1,35 @@
-#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
+#include <stdio.h>
+#define MAX 100
 
-void LerString(char str[], int *p)
-{
-    int i, x;
-    scanf("%[^\n]%*c", str);
-    x = strlen(str); // X RECEBE O TAMANHO DA STRING
-
-    for (i = 0; i < x; i++)
-    {
-        if (str[i == '\0'])
-        {
-            *p = &str[i];
-            exit;
-        }
+    void lerString(char str[]){
+        printf("-> DIGITE A STRING: ");
+        scanf("%[^\n]%*c",str);
     }
-}
-int main()
-{
-    char str[100];
-    int p;
 
-    LerString(str, &p);
-    printf("O endereco de memoria do caracter em branco eh: %d\n", p);
+    char* encontrarEndereco(char *str){
+    //FUNÇÃO QUE RETORNA UM PONTEIRO PARA CHAR, CONTENDO O ENDEREÇO DA PRIMEIRA POSIÇÃO EM BRANCO
+        int i;
+        char *p;
+
+        do{
+            str++;
+        }while(*str!=' ');
+
+        p=str;
+
+    return p;
+    }
+
+    int main(){
+        char str[MAX];
+        char *p;
+
+        lerString(str);
+
+        p=encontrarEndereco(str);
+
+        printf("-> ENDERECO DA 1a POSICAO EM BRANCO E %p\n",p);
 
     return 0;
-}
+    }
