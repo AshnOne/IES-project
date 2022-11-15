@@ -21,3 +21,11 @@
 #Os exercícios foram feitos pelo VsCode e Qt Creator em linguagem C.
 
 #Na execução dos programas será impresso no terminal instruções para o funcionamento do próprio.
+
+#Nos exercícios de matrizes sera pedido a inserção dos elementos da matriz podendo variar entre matrizes de 3x3, 3x4 e 4x4, após o último elemento for informado a será impresso aquilo que é pedido no exercício.
+
+#Nos exercícios de funções será solicitado um input específico de acordo com sua funcionalidade, após as instruções do programa serem seguidas seus resultados serão impressos.
+
+#Nos exercícios de parâmetros será solicitado um input específico de acordo com sua funcionalidade, após as instruções do programa serem seguidas seus resultados serão impressos.
+
+#Nos exercícios de strings será pedido o input de uma string qualquer ou alguma mais específica, após a inserção dela(s) será impresso o resultado do determinado exercício.
