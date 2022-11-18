@@ -1,44 +1,43 @@
 #include <stdio.h>
-#define MAX 100
+#define MAX 10
     
-    void LerVetor(int *n,double *vet){
-        *n=10;
-        printf("\nENTRE COM %d NUMEROS REAIS\n\n",*n);
-        for(int i=0;i<*n;i++){
+    void LerVetor(float *vet){
+        printf("\nENTRE COM %d NUMEROS REAIS\n\n",MAX);
+        for(int i=0;i<MAX;i++){
             printf("-> VET[%.2d] - ",i+1);
-            scanf("%lf",&vet[i]);
+            scanf("%f",&vet[i]);
         }
     }
 
-    void TrocarPosicao(double *veti,double *vetj){
+    void TrocarPosicao(float *veti,float *vetj){
         double aux;
         aux=*veti;
         *veti=*vetj;
         *vetj=aux;
     }
 
-    void OrdenaVetor(int n,double *vet){
+    void OrdenaVetor(float *vet){
         int i,j;
-        for(i=0;i<n;i++){
-            for(j=0;j<n;j++){
+        for(i=0;i<MAX;i++){
+            for(j=0;j<MAX;j++){
                 if(vet[i]<vet[j]){TrocarPosicao(&vet[i],&vet[j]);}
             }
         }
     }
 
-    void Mostrar(int n,double vet[]){
+    void Mostrar(float vet[]){
         printf("\nAQUI ESTA A SEQUENCIA ORDENADA: \n\n");
-        for(int i=0;i<n;i++){printf("-> N[%.2d] = %.2lf\n",i+1,vet[i]);}
-        printf("\n");
+        for(int i=0;i<MAX;i++){
+            printf("-> N[%.2d] = %.2f\n",i+1,vet[i]);
+        }
     }
     
     int main(){
-        int n;
         float vet[MAX];
 
-        LerVetor(&n,vet);
-        OrdenaVetor(n,vet);
-        Mostrar(n,vet);
+        LerVetor(vet);
+        OrdenaVetor(vet);
+        Mostrar(vet);
 
     return 0;
     }
